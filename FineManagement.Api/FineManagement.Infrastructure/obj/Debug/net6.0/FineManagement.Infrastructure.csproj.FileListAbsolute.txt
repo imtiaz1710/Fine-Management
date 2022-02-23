@@ -1,0 +1,17 @@
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\bin\Debug\net6.0\FineManagement.Infrastructure.deps.json
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\bin\Debug\net6.0\FineManagement.Infrastructure.dll
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\bin\Debug\net6.0\FineManagement.Infrastructure.pdb
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\bin\Debug\net6.0\FineManagement.Core.dll
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\bin\Debug\net6.0\FineManagement.Core.pdb
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\obj\Debug\net6.0\FineManagement.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\obj\Debug\net6.0\FineManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\obj\Debug\net6.0\FineManagement.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\obj\Debug\net6.0\FineManagement.Infrastructure.AssemblyInfo.cs
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\obj\Debug\net6.0\FineManagement.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\obj\Debug\net6.0\FineManagement.Infrastructure.csproj.CopyComplete
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\obj\Debug\net6.0\FineManagement.Infrastructure.dll
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\obj\Debug\net6.0\refint\FineManagement.Infrastructure.dll
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\obj\Debug\net6.0\FineManagement.Infrastructure.pdb
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\obj\Debug\net6.0\ref\FineManagement.Infrastructure.dll
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\bin\Debug\net6.0\FineManagement.Infrastructure.runtimeconfig.json
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Infrastructure\obj\Debug\net6.0\FineManagement.Infrastructure.genruntimeconfig.cache

@@ -1,0 +1,12 @@
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Dependency\bin\Debug\net6.0\FineManagement.Dependency.deps.json
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Dependency\bin\Debug\net6.0\FineManagement.Dependency.dll
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Dependency\bin\Debug\net6.0\FineManagement.Dependency.pdb
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Dependency\obj\Debug\net6.0\FineManagement.Dependency.csproj.AssemblyReference.cache
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Dependency\obj\Debug\net6.0\FineManagement.Dependency.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Dependency\obj\Debug\net6.0\FineManagement.Dependency.AssemblyInfoInputs.cache
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Dependency\obj\Debug\net6.0\FineManagement.Dependency.AssemblyInfo.cs
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Dependency\obj\Debug\net6.0\FineManagement.Dependency.csproj.CoreCompileInputs.cache
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Dependency\obj\Debug\net6.0\FineManagement.Dependency.dll
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Dependency\obj\Debug\net6.0\refint\FineManagement.Dependency.dll
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Dependency\obj\Debug\net6.0\FineManagement.Dependency.pdb
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Dependency\obj\Debug\net6.0\ref\FineManagement.Dependency.dll

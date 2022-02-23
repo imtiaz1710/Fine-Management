@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineManagement.Api", "FineManagement.Api\FineManagement.Api.csproj", "{0CD3D7EC-3C33-446A-8A24-2B3A183606A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineManagement.Api", "FineManagement.Api\FineManagement.Api.csproj", "{0CD3D7EC-3C33-446A-8A24-2B3A183606A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineManagement.Core", "FineManagement.Core\FineManagement.Core.csproj", "{51B4A272-0629-4ADC-9BCD-ECCBCED321B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineManagement.Core", "FineManagement.Core\FineManagement.Core.csproj", "{51B4A272-0629-4ADC-9BCD-ECCBCED321B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineManagement.Data", "FineManagement.Data\FineManagement.Data.csproj", "{9907CB15-94A0-4EA8-A16D-B0DCA1F387C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineManagement.Dependency", "FineManagement.Dependency\FineManagement.Dependency.csproj", "{58867053-CF84-44E3-9914-CDE609799EC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineManagement.Service", "FineManagement.Service\FineManagement.Service.csproj", "{FCE16C1D-7438-4EA1-B04D-36E008F5D06B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineManagement.Application", "FineManagement.Application\FineManagement.Application.csproj", "{7DB39B12-E162-4B12-BDAB-D0028A471C08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineManagement.Dependency", "FineManagement.Dependency\FineManagement.Dependency.csproj", "{58867053-CF84-44E3-9914-CDE609799EC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineManagement.Infrastructure", "FineManagement.Infrastructure\FineManagement.Infrastructure.csproj", "{C445AD1D-D415-4AA3-9F9C-120C41FBA234}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,18 +27,18 @@ Global
 		{51B4A272-0629-4ADC-9BCD-ECCBCED321B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51B4A272-0629-4ADC-9BCD-ECCBCED321B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51B4A272-0629-4ADC-9BCD-ECCBCED321B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9907CB15-94A0-4EA8-A16D-B0DCA1F387C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9907CB15-94A0-4EA8-A16D-B0DCA1F387C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9907CB15-94A0-4EA8-A16D-B0DCA1F387C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9907CB15-94A0-4EA8-A16D-B0DCA1F387C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FCE16C1D-7438-4EA1-B04D-36E008F5D06B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCE16C1D-7438-4EA1-B04D-36E008F5D06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCE16C1D-7438-4EA1-B04D-36E008F5D06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCE16C1D-7438-4EA1-B04D-36E008F5D06B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{58867053-CF84-44E3-9914-CDE609799EC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{58867053-CF84-44E3-9914-CDE609799EC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58867053-CF84-44E3-9914-CDE609799EC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58867053-CF84-44E3-9914-CDE609799EC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DB39B12-E162-4B12-BDAB-D0028A471C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DB39B12-E162-4B12-BDAB-D0028A471C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DB39B12-E162-4B12-BDAB-D0028A471C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DB39B12-E162-4B12-BDAB-D0028A471C08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C445AD1D-D415-4AA3-9F9C-120C41FBA234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C445AD1D-D415-4AA3-9F9C-120C41FBA234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C445AD1D-D415-4AA3-9F9C-120C41FBA234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C445AD1D-D415-4AA3-9F9C-120C41FBA234}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
