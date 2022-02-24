@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ts/54nUcr0f3zaVN852rwvrl7+iDmCFyklnrR57zbQP2M03zUyeJ3+gv4DB/UYKbtVEuoXWqhncwZ1eEWGzjxQ==",
+  "dgSpecHash": "d39CtpDnkZwmQARi8Z+WPT9DfBhJKXTX42jgk+APbCNamHs05OJoKgmSCbX7e5QemsONYCwb2ChAqMtI97/HaA==",
   "success": true,
   "projectFilePath": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Application\\FineManagement.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\imtiaz\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\imtiaz\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\imtiaz\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\imtiaz\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

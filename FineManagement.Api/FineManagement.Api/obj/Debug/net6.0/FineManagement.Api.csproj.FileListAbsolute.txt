@@ -61,3 +61,5 @@ C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\ob
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\obj\Debug\net6.0\FineManagement.Api.pdb
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\obj\Debug\net6.0\FineManagement.Api.genruntimeconfig.cache
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\obj\Debug\net6.0\ref\FineManagement.Api.dll
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\bin\Debug\net6.0\Humanizer.dll
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll

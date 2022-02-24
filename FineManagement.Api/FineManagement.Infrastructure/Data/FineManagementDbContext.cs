@@ -1,10 +1,5 @@
 ﻿using FineManagement.Core.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FineManagement.Infrastructure.Data
 {
@@ -20,8 +15,8 @@ namespace FineManagement.Infrastructure.Data
         public virtual DbSet<User>? Users { get; set; }
         public virtual DbSet<Team>? Teams { get; set; }
         public virtual DbSet<Transaction>? Transactions { get; set; }
-        public virtual DbSet<Fine>? Fine { get; set; }
-        public virtual DbSet<UserTeam>? UserTeam { get; set; }
+        public virtual DbSet<Fine>? Fines { get; set; }
+        public virtual DbSet<UserTeam>? UserTeams { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
