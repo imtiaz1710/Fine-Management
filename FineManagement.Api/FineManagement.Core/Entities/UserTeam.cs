@@ -1,6 +1,6 @@
 ﻿namespace FineManagement.Core.Entities
 {
-    public class UserTeam
+    public class UserTeam : IEntity<int>
     {
         public int Id { get; set; }
         public bool IsActive { get; set; }

@@ -31,10 +31,11 @@ namespace FineManagement.Infrastructure.Repositories.Base
             return await _fineManagementDbContext.Set<T>().ToListAsync();
         }
 
-        public async Task UpdateAsync(T entity)
+        public async Task<T> UpdateAsync(T entity)
         {
             _fineManagementDbContext.Set<T>().Update(entity);
             await _fineManagementDbContext.SaveChangesAsync();
+            return entity;
         }
     }
 }

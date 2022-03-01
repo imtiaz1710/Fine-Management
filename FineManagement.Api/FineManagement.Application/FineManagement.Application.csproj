@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Handlers\QueryHandlers\" />
+    <Compile Remove="Handlers\QueryHandlers\**" />
+    <EmbeddedResource Remove="Handlers\QueryHandlers\**" />
+    <None Remove="Handlers\QueryHandlers\**" />
   </ItemGroup>
 
   <ItemGroup>

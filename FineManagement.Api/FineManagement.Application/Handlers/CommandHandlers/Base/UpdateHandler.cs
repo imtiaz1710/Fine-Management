@@ -2,10 +2,15 @@
 using FineManagement.Core.Entities;
 using FineManagement.Core.Repositories.Base;
 using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace FineManagement.Application.Handlers.CommandHandlers.Base
 {
-    public class CreateHandler<TCommand, TResponse, TRepository, TEntity> : IRequestHandler<TCommand, TResponse>
+    public class UpdateHandler<TCommand, TResponse, TRepository, TEntity> : IRequestHandler<TCommand, TResponse>
         where TCommand : IRequest<TResponse>
         where TEntity : class, IEntity<int>
         where TRepository : IRepository<TEntity>
@@ -13,16 +18,15 @@ namespace FineManagement.Application.Handlers.CommandHandlers.Base
         private readonly TRepository _repository;
         private readonly IMapper _mapper;
 
-        public CreateHandler(TRepository repository, IMapper mapper)
+        public UpdateHandler(TRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
-
         public async Task<TResponse> Handle(TCommand request, CancellationToken cancellationToken)
         {
             var entity = _mapper.Map<TEntity>(request);
-            var newEntity = await _repository.AddAsync(entity);
+            var newEntity = await _repository.UpdateAsync(entity);
             var response = _mapper.Map<TResponse>(newEntity);
 
             return response;

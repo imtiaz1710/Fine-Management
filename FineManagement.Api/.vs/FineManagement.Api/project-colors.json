@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "7db39b12-e162-4b12-bdab-d0028a471c08": {
+      "ProjectGuid": "7db39b12-e162-4b12-bdab-d0028a471c08",
+      "DisplayName": "FineManagement.Application",
+      "ColorIndex": 0
+    },
+    "51b4a272-0629-4adc-9bcd-eccbced321b0": {
+      "ProjectGuid": "51b4a272-0629-4adc-9bcd-eccbced321b0",
+      "DisplayName": "FineManagement.Core",
+      "ColorIndex": 1
+    },
+    "c445ad1d-d415-4aa3-9f9c-120c41fba234": {
+      "ProjectGuid": "c445ad1d-d415-4aa3-9f9c-120c41fba234",
+      "DisplayName": "FineManagement.Infrastructure",
+      "ColorIndex": 2
+    },
+    "0cd3d7ec-3c33-446a-8a24-2b3a183606a3": {
+      "ProjectGuid": "0cd3d7ec-3c33-446a-8a24-2b3a183606a3",
+      "DisplayName": "FineManagement.Api",
+      "ColorIndex": 3
+    },
+    "58867053-cf84-44e3-9914-cde609799ec7": {
+      "ProjectGuid": "58867053-cf84-44e3-9914-cde609799ec7",
+      "DisplayName": "FineManagement.Dependency",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}

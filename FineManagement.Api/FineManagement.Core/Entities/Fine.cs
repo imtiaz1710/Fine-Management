@@ -1,6 +1,6 @@
 ﻿namespace FineManagement.Core.Entities
 {
-    public class Fine
+    public class Fine : IEntity<int>
     {
         public int Id { get; set; }
         public string? FineType { get; set; }

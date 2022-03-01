@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Dependency\\FineManagement.Dependency.csproj": {}
+    "C:\\Users\\Imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Dependency\\FineManagement.Dependency.csproj": {}
   },
   "projects": {
-    "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Dependency\\FineManagement.Dependency.csproj": {
+    "C:\\Users\\Imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Dependency\\FineManagement.Dependency.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Dependency\\FineManagement.Dependency.csproj",
+        "projectUniqueName": "C:\\Users\\Imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Dependency\\FineManagement.Dependency.csproj",
         "projectName": "FineManagement.Dependency",
-        "projectPath": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Dependency\\FineManagement.Dependency.csproj",
-        "packagesPath": "C:\\Users\\imtiaz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Dependency\\obj\\",
+        "projectPath": "C:\\Users\\Imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Dependency\\FineManagement.Dependency.csproj",
+        "packagesPath": "C:\\Users\\Imtiaz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Dependency\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\imtiaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Imtiaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
