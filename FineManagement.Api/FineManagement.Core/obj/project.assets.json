@@ -8,19 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Imtiaz\\.nuget\\packages\\": {}
+    "C:\\Users\\imtiaz\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Core\\FineManagement.Core.csproj",
+      "projectUniqueName": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Core\\FineManagement.Core.csproj",
       "projectName": "FineManagement.Core",
-      "projectPath": "C:\\Users\\Imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Core\\FineManagement.Core.csproj",
-      "packagesPath": "C:\\Users\\Imtiaz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Core\\obj\\",
+      "projectPath": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Core\\FineManagement.Core.csproj",
+      "packagesPath": "C:\\Users\\imtiaz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Core\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Imtiaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\imtiaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

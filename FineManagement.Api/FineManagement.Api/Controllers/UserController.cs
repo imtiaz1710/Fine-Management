@@ -1,4 +1,7 @@
-﻿using FineManagement.Application.Commands;
+﻿using AutoMapper;
+using FineManagement.Application.Commands;
+using FineManagement.Core.Entities;
+using FineManagement.Core.Repositories.Base;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,17 +11,20 @@ namespace FineManagement.Api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private IMediator mediator;
+        private readonly IRepository<User> _repository;
+        private IMapper _mapper;
 
-        public UserController(IMediator mediator)
+        public UserController(IRepository<User> repository, IMapper mapper)
         {
-            this.mediator = mediator;
+            _repository = repository;
+            _mapper = mapper;
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(AddOrUpdateUserCommand command)
         {
-            return Ok(await mediator.Send(command));
+            var entity = _mapper.Map<User>(command);
+            return Ok(await _repository.AddAsync(entity));
         }
     }
 }

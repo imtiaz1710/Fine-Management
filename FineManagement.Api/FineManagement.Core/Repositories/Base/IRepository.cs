@@ -1,10 +1,12 @@
-﻿namespace FineManagement.Core.Repositories.Base
+﻿using FineManagement.Core.Entities;
+
+namespace FineManagement.Core.Repositories.Base
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<TEntity> where TEntity : BaseEntity<int>
     {
-        Task<IReadOnlyList<T>> GetAllAsync();
-        Task<T> UpdateAsync(T entity);
-        Task<T> AddAsync(T entity);
-        Task DeleteAsync(T entity);
+        Task<IReadOnlyList<TEntity>> GetAllAsync();
+        Task<TEntity> UpdateAsync(TEntity entity);
+        Task<TEntity> AddAsync(TEntity entity);
+        Task DeleteAsync(TEntity entity);
     }
 }

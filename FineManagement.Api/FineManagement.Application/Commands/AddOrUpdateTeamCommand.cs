@@ -5,6 +5,6 @@ namespace FineManagement.Application.Commands
 {
     public class AddOrUpdateTeamCommand : IRequest<TeamResponse>
     {
-        public string? Name { get; set; }
+        public string Name { get; set; }
     }
 }

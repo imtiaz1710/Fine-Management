@@ -25,5 +25,32 @@ namespace FineManagement.Infrastructure.Data
             // It's not required: https://stackoverflow.com/questions/39576176/is-base-onmodelcreatingmodelbuilder-necessary
             // and in this particular case creates problems in migrations.
         }
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+
+            foreach (var item in ChangeTracker.Entries<IAuditable>())
+            {
+                switch (item.State)
+                {
+                    case EntityState.Added:
+                        item.Entity.CreatedDate = DateTime.Now;
+                        //Todo
+                        //
+                        //item.Entity.CreatedBy = _currentUserService.UserId;
+                        break;
+                    case EntityState.Modified:
+                        item.Entity.LastUpdatedDate = DateTime.Now;
+                        //Todo
+                        //
+                        //item.Entity.LastUpdatedDate = _currentUserService.UserId;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return base.SaveChangesAsync();
+        }
     }
 }

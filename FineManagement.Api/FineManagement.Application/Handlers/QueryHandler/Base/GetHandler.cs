@@ -11,7 +11,7 @@ namespace FineManagement.Application.Handlers.QueryHandler.Base
 {
     public class GetHandler<TQuery, TResponse, TRepository, TEntity> : IRequestHandler<TQuery, TResponse>
         where TQuery : IRequest<TResponse>
-        where TEntity : class, IEntity<int>
+        where TEntity : BaseEntity<object>
         where TRepository : IRepository<TEntity>
         where TResponse: IEnumerable<TEntity>
     {

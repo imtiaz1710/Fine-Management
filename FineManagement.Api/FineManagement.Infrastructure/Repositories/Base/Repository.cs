@@ -1,10 +1,11 @@
-﻿using FineManagement.Core.Repositories.Base;
+﻿using FineManagement.Core.Entities;
+using FineManagement.Core.Repositories.Base;
 using FineManagement.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace FineManagement.Infrastructure.Repositories.Base
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity<int>
     {
         protected readonly FineManagementDbContext _fineManagementDbContext;
 
@@ -13,27 +14,27 @@ namespace FineManagement.Infrastructure.Repositories.Base
             _fineManagementDbContext = fineManagementDbContext;
         }
 
-        public async Task<T> AddAsync(T entity)
+        public async Task<TEntity> AddAsync(TEntity entity)
         {
-            await _fineManagementDbContext.Set<T>().AddAsync(entity);
+            await _fineManagementDbContext.Set<TEntity>().AddAsync(entity);
             await _fineManagementDbContext.SaveChangesAsync();
             return entity;
         }
 
-        public async Task DeleteAsync(T entity)
+        public async Task DeleteAsync(TEntity entity)
         {
-            _fineManagementDbContext.Set<T>().Remove(entity);
+            _fineManagementDbContext.Set<TEntity>().Remove(entity);
             await _fineManagementDbContext.SaveChangesAsync();
         }
 
-        public async Task<IReadOnlyList<T>> GetAllAsync()
+        public async Task<IReadOnlyList<TEntity>> GetAllAsync()
         {
-            return await _fineManagementDbContext.Set<T>().ToListAsync();
+            return await _fineManagementDbContext.Set<TEntity>().ToListAsync();
         }
 
-        public async Task<T> UpdateAsync(T entity)
+        public async Task<TEntity> UpdateAsync(TEntity entity)
         {
-            _fineManagementDbContext.Set<T>().Update(entity);
+            _fineManagementDbContext.Set<TEntity>().Update(entity);
             await _fineManagementDbContext.SaveChangesAsync();
             return entity;
         }

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace FineManagement.Application.Commands
 {
-    public class DeleteFineCommand : IRequest<int>
+    public class DeleteFineCommand : IRequest<object>
     {
-        public int Id { get; set; }
+        public object Id { get; set; }
     }
 }

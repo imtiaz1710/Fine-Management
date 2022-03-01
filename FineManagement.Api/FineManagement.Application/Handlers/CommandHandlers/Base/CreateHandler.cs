@@ -7,7 +7,7 @@ namespace FineManagement.Application.Handlers.CommandHandlers.Base
 {
     public class CreateHandler<TCommand, TResponse, TRepository, TEntity> : IRequestHandler<TCommand, TResponse>
         where TCommand : IRequest<TResponse>
-        where TEntity : class, IEntity<int>
+        where TEntity : BaseEntity<object>
         where TRepository : IRepository<TEntity>
     {
         private readonly TRepository _repository;
