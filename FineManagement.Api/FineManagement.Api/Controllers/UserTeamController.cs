@@ -3,55 +3,54 @@ using FineManagement.Application.Commands;
 using FineManagement.Application.Responses;
 using FineManagement.Core.Entities;
 using FineManagement.Core.Repositories.Base;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FineManagement.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UserTeamController : ControllerBase
     {
-        private readonly IRepository<User, int> _repository;
+        private readonly IRepository<UserTeam, int> _repository;
         private IMapper _mapper;
 
-        public UserController(IRepository<User, int> repository, IMapper mapper)
+        public UserTeamController(IRepository<UserTeam, int> repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(AddOrUpdateUserCommand command)
+        public async Task<IActionResult> Create(AddOrUpdateUserTeamCommand command)
         {
-            var entity = _mapper.Map<User>(command);
+            var entity = _mapper.Map<UserTeam>(command);
             var returnedEntity = await _repository.AddAsync(entity);
 
-            return Ok(_mapper.Map<UserResponse>(returnedEntity));
+            return Ok(_mapper.Map<UserTeamResponse>(returnedEntity));
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, AddOrUpdateUserCommand command)
+        public async Task<IActionResult> Update(int id, AddOrUpdateUserTeamCommand command)
         {
-            var entity = _mapper.Map<User>(command);
+            var entity = _mapper.Map<UserTeam>(command);
             entity.Id = id;
             var responseEntity = await _repository.UpdateAsync(entity);
 
-            return Ok(_mapper.Map<UserResponse>(responseEntity));
+            return Ok(_mapper.Map<UserTeamResponse>(responseEntity));
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var userListEntity = await _repository.GetAllAsync();
-            var userListResponse = new List<UserResponse>();
+            var userTeamListEntity = await _repository.GetAllAsync();
+            var userTeamListResponse = new List<UserTeamResponse>();
 
-            foreach (var user in userListEntity)
+            foreach (var UserTeam in userTeamListEntity)
             {
-                userListResponse.Add(_mapper.Map<UserResponse>(user));
+                userTeamListResponse.Add(_mapper.Map<UserTeamResponse>(UserTeam));
             }
 
-            return Ok(userListResponse);
+            return Ok(userTeamListResponse);
         }
 
         [HttpDelete("{id}")]
