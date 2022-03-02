@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using FineManagement.Application.Commands;
 using FineManagement.Application.Responses;
-using System.Transactions;
+using FineManagement.Core.Entities;
 
 namespace FineManagement.Application.Mappers
 {
