@@ -11,10 +11,10 @@ namespace FineManagement.Api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IRepository<User> _repository;
+        private readonly IRepository<User, int> _repository;
         private IMapper _mapper;
 
-        public UserController(IRepository<User> repository, IMapper mapper)
+        public UserController(IRepository<User, int> repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -24,7 +24,10 @@ namespace FineManagement.Api.Controllers
         public async Task<IActionResult> Create(AddOrUpdateUserCommand command)
         {
             var entity = _mapper.Map<User>(command);
-            return Ok(await _repository.AddAsync(entity));
+            await _repository.AddAsync(entity);
+            return Ok(entity);
         }
+
+        
     }
 }

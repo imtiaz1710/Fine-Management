@@ -7,6 +7,7 @@ using System.Reflection;
 using MediatR;
 using System.Text;
 using System.Threading.Tasks;
+using FineManagement.Core.Entities;
 
 namespace FineManagement.Application
 {

@@ -2,7 +2,7 @@
 
 namespace FineManagement.Core.Repositories.Base
 {
-    public interface IRepository<TEntity> where TEntity : BaseEntity<int>
+    public interface IRepository<TEntity, TKey> where TEntity : BaseEntity<TKey>
     {
         Task<IReadOnlyList<TEntity>> GetAllAsync();
         Task<TEntity> UpdateAsync(TEntity entity);

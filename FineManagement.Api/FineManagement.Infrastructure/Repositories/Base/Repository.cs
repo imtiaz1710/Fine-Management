@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FineManagement.Infrastructure.Repositories.Base
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity<int>
+    public class Repository<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : BaseEntity<TKey>
     {
         protected readonly FineManagementDbContext _fineManagementDbContext;
 
