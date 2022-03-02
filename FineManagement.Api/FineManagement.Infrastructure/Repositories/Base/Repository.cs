@@ -21,9 +21,11 @@ namespace FineManagement.Infrastructure.Repositories.Base
             return entity;
         }
 
-        public async Task DeleteAsync(TEntity entity)
+        public async Task DeleteAsync(TKey id)
         {
-            _fineManagementDbContext.Set<TEntity>().Remove(entity);
+            var entityToDelete = await _fineManagementDbContext.Set<TEntity>().FindAsync(id);
+            _fineManagementDbContext.Set<TEntity>().Remove(entityToDelete);
+
             await _fineManagementDbContext.SaveChangesAsync();
         }
 

@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace FineManagement.Application.Handlers.CommandHandlers.Base
 {
-    public class DeleteHandler<TCommand, TRepository, TEntity> : IRequestHandler<TCommand, object>
-        where TCommand : IRequest<object>
-        where TRepository : IRepository<TEntity>
-        where TEntity : BaseEntity<object>
+    public class DeleteHandler<TCommand, TRepository, TEntity, TKey> : IRequestHandler<TCommand, TKey>
+       where TCommand : IRequest<TKey>
+        where TRepository : IRepository<TEntity, TKey>
+        where TEntity : BaseEntity<TKey>
     {
         private readonly TRepository _repository;
         private readonly IMapper _mapper;
@@ -25,10 +25,10 @@ namespace FineManagement.Application.Handlers.CommandHandlers.Base
             _mapper = mapper;
         }
 
-        public async Task<object> Handle(TCommand request, CancellationToken cancellationToken)
+        public async Task<TKey> Handle(TCommand request, CancellationToken cancellationToken)
         {
             var entity = _mapper.Map<TEntity>(request);
-            await _repository.DeleteAsync(entity);
+            await _repository.DeleteAsync(entity.Id);
             return entity.Id;
         }
     }

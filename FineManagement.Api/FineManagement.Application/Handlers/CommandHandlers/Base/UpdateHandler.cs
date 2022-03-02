@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace FineManagement.Application.Handlers.CommandHandlers.Base
 {
-    public class UpdateHandler<TCommand, TResponse, TRepository, TEntity> : IRequestHandler<TCommand, TResponse>
+    public class UpdateHandler<TCommand, TResponse, TRepository, TEntity, TKey> : IRequestHandler<TCommand, TResponse>
         where TCommand : IRequest<TResponse>
-        where TEntity : BaseEntity<object>
-        where TRepository : IRepository<TEntity>
+        where TEntity : BaseEntity<TKey>
+        where TRepository : IRepository<TEntity, TKey>
     {
         private readonly TRepository _repository;
         private readonly IMapper _mapper;

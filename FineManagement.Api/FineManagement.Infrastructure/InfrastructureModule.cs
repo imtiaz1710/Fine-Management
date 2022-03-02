@@ -1,4 +1,5 @@
-﻿using FineManagement.Core.Repositories;
+﻿using FineManagement.Core.Entities;
+using FineManagement.Core.Repositories;
 using FineManagement.Core.Repositories.Base;
 using FineManagement.Infrastructure.Constants;
 using FineManagement.Infrastructure.Data;
@@ -19,7 +20,11 @@ namespace FineManagement.Infrastructure
     {
         public static IServiceCollection LoadInfrastructureDependencies(this IServiceCollection service)
         {
-            service.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            service.AddScoped<IRepository<User,int>, Repository<User, int>> ();
+            service.AddScoped<IRepository<Team,int>, Repository<Team, int>> ();
+            service.AddScoped<IRepository<UserTeam,int>, Repository<UserTeam, int>> ();
+            service.AddScoped<IRepository<Fine,int>, Repository<Fine, int>> ();
+            service.AddScoped<IRepository<Transaction,int>, Repository<Transaction, int>> ();
 
             return service;
         }

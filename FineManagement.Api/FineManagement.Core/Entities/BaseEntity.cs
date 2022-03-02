@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace FineManagement.Core.Entities
 {
-    public abstract class BaseEntity<T> : IAuditable
+    public abstract class BaseEntity<TKey> : IAuditable
     {
-        public T Id { get; set; }
+        public TKey Id { get; set; }
         public int CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
         public int LastUpdatedBy { get; set; }

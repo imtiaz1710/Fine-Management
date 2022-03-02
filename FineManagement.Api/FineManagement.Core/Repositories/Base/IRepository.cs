@@ -7,6 +7,6 @@ namespace FineManagement.Core.Repositories.Base
         Task<IReadOnlyList<TEntity>> GetAllAsync();
         Task<TEntity> UpdateAsync(TEntity entity);
         Task<TEntity> AddAsync(TEntity entity);
-        Task DeleteAsync(TEntity entity);
+        Task DeleteAsync(TKey key);
     }
 }
