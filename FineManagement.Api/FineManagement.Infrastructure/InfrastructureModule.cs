@@ -1,18 +1,11 @@
 ﻿using FineManagement.Core.Entities;
-using FineManagement.Core.Repositories;
 using FineManagement.Core.Repositories.Base;
 using FineManagement.Infrastructure.Constants;
 using FineManagement.Infrastructure.Data;
-using FineManagement.Infrastructure.Repositories;
 using FineManagement.Infrastructure.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FineManagement.Infrastructure
 {
@@ -20,11 +13,11 @@ namespace FineManagement.Infrastructure
     {
         public static IServiceCollection LoadInfrastructureDependencies(this IServiceCollection service)
         {
-            service.AddScoped<IRepository<User,int>, Repository<User, int>> ();
-            service.AddScoped<IRepository<Team,int>, Repository<Team, int>> ();
-            service.AddScoped<IRepository<UserTeam,int>, Repository<UserTeam, int>> ();
-            service.AddScoped<IRepository<Fine,int>, Repository<Fine, int>> ();
-            service.AddScoped<IRepository<Transaction,int>, Repository<Transaction, int>> ();
+            service.AddScoped<IRepository<User, int>, Repository<User, int>>();
+            service.AddScoped<IRepository<Team, int>, Repository<Team, int>>();
+            service.AddScoped<IRepository<UserTeam, int>, Repository<UserTeam, int>>();
+            service.AddScoped<IRepository<Fine, int>, Repository<Fine, int>>();
+            service.AddScoped<IRepository<Transaction, int>, Repository<Transaction, int>>();
 
             return service;
         }

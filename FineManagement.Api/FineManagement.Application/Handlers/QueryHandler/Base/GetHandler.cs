@@ -1,11 +1,6 @@
 ﻿using FineManagement.Core.Entities;
 using FineManagement.Core.Repositories.Base;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FineManagement.Application.Handlers.QueryHandler.Base
 {
@@ -13,7 +8,7 @@ namespace FineManagement.Application.Handlers.QueryHandler.Base
         where TQuery : IRequest<TResponse>
         where TEntity : BaseEntity<TKey>
         where TRepository : IRepository<TEntity, TKey>
-        where TResponse: IEnumerable<TEntity>
+        where TResponse : IEnumerable<TEntity>
     {
         private readonly TRepository _repository;
 

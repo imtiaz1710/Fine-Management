@@ -1,12 +1,5 @@
 using FineManagement.Application;
-using FineManagement.Application.Commands;
-using FineManagement.Application.Mappers;
 using FineManagement.Infrastructure;
-using FineManagement.Infrastructure.Constants;
-using FineManagement.Infrastructure.Data;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +16,18 @@ builder.Services.LoadInfrastructureDependencies().AddSql(builder.Configuration);
 
 builder.Services.LoadApplicationDependencies();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:4200")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,8 +39,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors();
+
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+

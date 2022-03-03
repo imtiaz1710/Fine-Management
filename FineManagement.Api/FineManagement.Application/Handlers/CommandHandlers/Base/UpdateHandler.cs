@@ -2,11 +2,6 @@
 using FineManagement.Core.Entities;
 using FineManagement.Core.Repositories.Base;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FineManagement.Application.Handlers.CommandHandlers.Base
 {

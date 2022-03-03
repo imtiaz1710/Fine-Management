@@ -3,7 +3,6 @@ using FineManagement.Application.Commands;
 using FineManagement.Application.Responses;
 using FineManagement.Core.Entities;
 using FineManagement.Core.Repositories.Base;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FineManagement.Api.Controllers
