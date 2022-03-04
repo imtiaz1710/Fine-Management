@@ -6,7 +6,6 @@ C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\ob
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\obj\Debug\net6.0\FineManagement.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\obj\Debug\net6.0\FineManagement.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\obj\Debug\net6.0\FineManagement.Api.dll
-C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\obj\Debug\net6.0\refint\FineManagement.Api.dll
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\obj\Debug\net6.0\FineManagement.Api.pdb
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\bin\Debug\net6.0\appsettings.json
@@ -70,3 +69,4 @@ C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\ob
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\obj\Debug\net6.0\FineManagement.Api.csproj.CopyComplete
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\obj\Debug\net6.0\FineManagement.Api.genruntimeconfig.cache
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\obj\Debug\net6.0\ref\FineManagement.Api.dll
+C:\Users\Imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Api\bin\Debug\net6.0\ref\FineManagement.Api.dll
