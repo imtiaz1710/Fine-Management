@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, lastValueFrom } from 'rxjs';
 import { UserTeam } from './../models/user-team';
 import { Injectable } from '@angular/core';
 import { Team } from '../models/team';
@@ -10,10 +10,6 @@ import { UserTeamService } from './user-team.service';
   providedIn: 'root',
 })
 export class MyProfileService {
-  teams: Team[] = [];
-  userTeams: UserTeam[] = [];
-  myTeams: Team[] = [];
-
   constructor(
     private userTeamService: UserTeamService,
     private teamService: TeamService
@@ -24,30 +20,23 @@ export class MyProfileService {
   }
 
   public async getMyActiveTeamsAsync() {
+    let teams: Team[] = [];
+    let userTeams: UserTeam[] = [];
+    let myTeams: Team[] = [];
     const myProfile = this.getProfile();
 
-    await this.teamService.getAllTeams().subscribe({
-      next: (ts) => {
-        this.teams = ts;
-        console.log(this.teams);
-      },
-      error: (err) => console.log(err),
-    });
+    const teams$ = this.teamService.getAllTeams();
+    const userTeams$ = this.userTeamService.getAllUserTeams();
 
-    await this.userTeamService.getAllUserTeams().subscribe({
-      next: (uts) => {
-        this.userTeams = uts;
+    teams = await lastValueFrom(teams$);
+    userTeams = await lastValueFrom(userTeams$);
 
-        this.userTeams
-          .filter((ut) => ut.isActive && ut.userId == myProfile.id)
-          .forEach((ut) => this.myTeams.push(this.teams.find((t) => t.id == ut.teamId)));
-      },
-      error: (err) => console.log(err),
-    });
+    userTeams
+      .filter((ut) => ut.isActive && ut.userId == myProfile.id)
+      .forEach((ut) =>
+        myTeams.push(teams.find((t) => t.id == ut.teamId))
+      );
 
-     console.log(this.teams)
-     console.log(this.userTeams)
-     console.log('this is:', this.myTeams)
-    return this.myTeams;
+    return myTeams;
   }
 }
