@@ -14,6 +14,7 @@ import { UserTeam } from 'src/app/core/models/user-team';
 import { TeamService } from 'src/app/core/services/team.service';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/core/models/user';
+import { JsonpClientBackend } from '@angular/common/http';
 
 @Component({
   selector: 'app-users',
@@ -132,7 +133,6 @@ export class UsersComponent implements OnInit {
   }
 
   openAddUserModal(template: TemplateRef<any>) {
-    debugger;
     if (this.addToTeamForm.valid)
       this.modalRef = this.modalService.show(template);
     else this.toastrService.error('invalid operation!');
@@ -143,9 +143,8 @@ export class UsersComponent implements OnInit {
     this.modalRef.content = userTeamId;
   }
 
-  onDelete(value) {
-    debugger;
-    let userTeam = this.userTeams.filter((ut) => ut.id == value)[0];
+  onDelete(userTeamId: number) {
+    let userTeam = this.userTeams.find((ut) => ut.id == userTeamId);
     this.changeStatusOfUserTeam(userTeam, false);
   }
 

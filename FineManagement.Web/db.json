@@ -170,28 +170,28 @@
   "transactions": [
     {
       "userTeamId": 1,
-      "transactionAmount": 100,
+      "amount": 100,
       "date": "2022-02-11",
       "note": "demo",
       "id": 1
     },
     {
       "userTeamId": 1,
-      "transactionAmount": 200,
+      "amount": 200,
       "date": "2022-02-11",
       "note": "demo demo",
       "id": 2
     },
     {
       "userTeamId": 2,
-      "transactionAmount": 100,
+      "amount": 100,
       "date": "2022-02-18",
       "note": "demo",
       "id": 3
     },
     {
       "userTeamId": 4,
-      "transactionAmount": 100,
+      "amount": 100,
       "date": "2022-02-18",
       "note": "demo",
       "id": 4

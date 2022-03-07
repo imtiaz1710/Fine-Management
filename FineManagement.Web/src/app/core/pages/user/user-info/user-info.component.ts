@@ -1,3 +1,4 @@
+import { lastValueFrom } from 'rxjs';
 import { UserService } from 'src/app/core/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -32,11 +33,10 @@ export class UserInfoComponent implements OnInit {
   async ngOnInit() {
     this.userId = JSON.parse(this.json).id;
 
-    await this.userService.getAllUsers().subscribe({
-      next: (us) => (this.users = us),
-      error: (err) => console.log(err),
-    });
+    const user$ = this.userService.getAllUsers();
 
+    this.users = await lastValueFrom(user$);
+    
     this.user = this.users.find((u) => u.id == this.userId);
 
     this.editForm = this.formBuilder.group({

@@ -1,3 +1,4 @@
+import { lastValueFrom } from 'rxjs';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
@@ -14,7 +15,7 @@ import { UserService } from 'src/app/core/services/user.service';
 @Component({
   selector: 'app-add-and-view-transaction',
   templateUrl: './add-and-view-transaction.component.html',
-  styleUrls: ['./add-and-view-transaction.component.scss']
+  styleUrls: ['./add-and-view-transaction.component.scss'],
 })
 export class AddAndViewTransactionComponent implements OnInit {
   addTransactionForm: FormGroup;
@@ -29,19 +30,22 @@ export class AddAndViewTransactionComponent implements OnInit {
   filteredTransactions: Transaction[] = [];
   rows = [];
 
-  constructor(private modalService: BsModalService, private teamService: TeamService,
+  constructor(
+    private modalService: BsModalService,
+    private teamService: TeamService,
     private userService: UserService,
     private userTeamService: UserTeamService,
     private toastrService: ToastrService,
     private myProfileService: MyProfileService,
     private formBuilder: FormBuilder,
-    private transactionService: TransactionService) { }
+    private transactionService: TransactionService
+  ) {}
 
   async ngOnInit() {
     this.addTransactionForm = this.formBuilder.group({
       teamId: [''],
       userId: [''],
-      transactionAmount: [''],
+      amount: [''],
       date: [''],
       note: [''],
     });
@@ -50,28 +54,17 @@ export class AddAndViewTransactionComponent implements OnInit {
   }
 
   private async loadAllDataForTrasactionTable() {
-    await this.transactionService.getAllTransactions().subscribe({
-      next: (transactions) => (this.transactions = transactions),
-      error: (err) => console.log(err),
-    });
+    const transactions$ = this.transactionService.getAllTransactions();
+    const users$ = this.userService.getAllUsers();
+    const teams$ = this.teamService.getAllTeams();
+    const userTeams$ = this.userTeamService.getAllUserTeams();
 
-    await this.userService.getAllUsers().subscribe({
-      next: (users) => (this.users = users),
-      error: (err) => console.log(err),
-    });
-
-    await this.teamService.getAllTeams().subscribe({
-      next: (teams) => (this.teams = teams),
-      error: (err) => console.log(err),
-    });
-
-    await this.userTeamService.getAllUserTeams().subscribe({
-      next: (userTeams) => (this.userTeams = userTeams),
-      error: (err) => console.log(err),
-    });
-
+    this.transactions = await lastValueFrom(transactions$);
+    this.users = await lastValueFrom(users$);
+    this.teams = await lastValueFrom(teams$);
+    this.userTeams = await lastValueFrom(userTeams$);
     this.myTeams = await this.myProfileService.getMyActiveTeamsAsync();
-    
+
     this.filteredTransactions = [];
     this.loadTransactionList();
     this.rows = this.formateFineList();
@@ -82,10 +75,11 @@ export class AddAndViewTransactionComponent implements OnInit {
       let userTeams = this.userTeams.filter((ut) => myTeam.id == ut.teamId);
 
       userTeams.forEach((ut) => {
-        let transaction = this.transactions.filter((tn) => tn.userTeamId == ut.id);
+        let transaction = this.transactions.filter(
+          (tn) => tn.userTeamId == ut.id
+        );
 
-        if (!!transaction)
-          this.filteredTransactions.push(...transaction);
+        if (!!transaction) this.filteredTransactions.push(...transaction);
       });
     });
   }
@@ -99,7 +93,7 @@ export class AddAndViewTransactionComponent implements OnInit {
       return {
         name: user.name,
         teamName: team.name,
-        transactionAmount: fl.transactionAmount,
+        amount: fl.amount,
         date: fl.date,
         note: fl.note,
         id: fl.id,
@@ -108,24 +102,26 @@ export class AddAndViewTransactionComponent implements OnInit {
   }
 
   edit(id: number) {
-    let transaction = this.transactions.find(t => t.id == id);
+    let transaction = this.transactions.find((t) => t.id == id);
 
-    transaction.transactionAmount = this.editTransactionForm.value.transactionAmount;
+    transaction.amount = this.editTransactionForm.value.amount;
     transaction.note = this.editTransactionForm.value.note;
     transaction.date = this.editTransactionForm.value.date;
 
-    this.transactionService.updateTransaction(transaction.id, transaction).subscribe({
-      next: (res) => this.toastrService.success("Successfully updated!"),
-      error: (err) => this.toastrService.error("Error!"),
-      complete: () => this.loadAllDataForTrasactionTable()
-    });
+    this.transactionService
+      .updateTransaction(transaction.id, transaction)
+      .subscribe({
+        next: (res) => this.toastrService.success('Successfully updated!'),
+        error: (err) => this.toastrService.error('Error!'),
+        complete: () => this.loadAllDataForTrasactionTable(),
+      });
   }
 
   Delete(id: number) {
     this.transactionService.deleteTransaction(id).subscribe({
-      next: (res) => this.toastrService.success("Successfully deleted!"),
-      error: (err) => this.toastrService.error("Error!"),
-      complete: () => this.loadAllDataForTrasactionTable()
+      next: (res) => this.toastrService.success('Successfully deleted!'),
+      error: (err) => this.toastrService.error('Error!'),
+      complete: () => this.loadAllDataForTrasactionTable(),
     });
   }
 
@@ -152,7 +148,7 @@ export class AddAndViewTransactionComponent implements OnInit {
 
     let transaction: Transaction = <Transaction>{
       userTeamId: userTeam.id,
-      transactionAmount: formValue.transactionAmount,
+      amount: formValue.amount,
       date: <Date>formValue.date,
       note: formValue.note,
     };
@@ -169,24 +165,27 @@ export class AddAndViewTransactionComponent implements OnInit {
   }
 
   openEditTransactionModal(template: TemplateRef<any>, transactionId: number) {
-    let transaction = this.transactions.find(t => t.id == transactionId);
-    let userTeam = this.userTeams.find(ut => ut.id == transaction.userTeamId);
-    let user = this.users.find(u => u.id == userTeam.userId);
-    let team = this.teams.find(t => t.id == userTeam.teamId);
+    let transaction = this.transactions.find((t) => t.id == transactionId);
+    let userTeam = this.userTeams.find((ut) => ut.id == transaction.userTeamId);
+    let user = this.users.find((u) => u.id == userTeam.userId);
+    let team = this.teams.find((t) => t.id == userTeam.teamId);
 
     this.editTransactionForm = new FormBuilder().group({
       name: [{ value: user.name, disabled: true }],
       teamName: [{ value: team.name, disabled: true }],
-      transactionAmount: [{ value: transaction.transactionAmount, disabled: false }],
+      amount: [{ value: transaction.amount, disabled: false }],
       date: [{ value: transaction.date, disabled: false }],
       note: [{ value: transaction.note, disabled: false }],
-      id: transaction.id
-    })
+      id: transaction.id,
+    });
 
     this.modalRef = this.modalService.show(template);
   }
 
-  openDeleteTransactionModal(template: TemplateRef<any>, transactionId: number) {
+  openDeleteTransactionModal(
+    template: TemplateRef<any>,
+    transactionId: number
+  ) {
     this.modalRef = this.modalService.show(template);
     this.modalRef.content = transactionId;
   }

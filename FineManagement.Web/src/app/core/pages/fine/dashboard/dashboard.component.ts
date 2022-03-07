@@ -90,11 +90,11 @@ export class DashboardComponent implements OnInit {
   calculateTotalTransactionByUserTeamId(userTeamId: number): number {
     this.LoadTransactionsByUserTeamId(userTeamId);
     let sum = 0;
-    this.filteredTransactions.forEach((tn) => (sum += tn.transactionAmount));
+    this.filteredTransactions.forEach((tn) => (sum += tn.amount));
     return sum;
   }
 
-  calculateTotalTransactionAmountByTeamId(teamId: number): number {
+  calculateTotalamountByTeamId(teamId: number): number {
     const userTeamsOfMyTeam: UserTeam[] = this.userTeams.filter(
       (ut) => ut.teamId == teamId
     );
@@ -107,13 +107,11 @@ export class DashboardComponent implements OnInit {
       transactionsOfMyTeam.push(...transactions);
     });
 
-    let totalTransactionAmount = 0;
+    let totalamount = 0;
 
-    transactionsOfMyTeam.forEach(
-      (tn) => (totalTransactionAmount += tn.transactionAmount)
-    );
+    transactionsOfMyTeam.forEach((tn) => (totalamount += tn.amount));
 
-    return totalTransactionAmount;
+    return totalamount;
   }
 
   calculateTotalFineAmountByTeamId(teamId: number): number {

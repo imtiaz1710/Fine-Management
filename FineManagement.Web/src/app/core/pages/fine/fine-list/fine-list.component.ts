@@ -1,3 +1,4 @@
+import { lastValueFrom } from 'rxjs';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
@@ -47,27 +48,17 @@ export class FineListComponent implements OnInit {
 
   private async loadAllDataForFineList() {
     this.filteredFineList = [];
-    await this.fineService.getAllFines().subscribe({
-      next: (fines) => (this.fines = fines),
-      error: (err) => console.log(err),
-    });
+    const fines$ =  this.fineService.getAllFines();
+    const users$ = this.userService.getAllUsers();
+    const teams$ = this.teamService.getAllTeams();
+    const userTeams$ = this.userTeamService.getAllUserTeams();
 
-    await this.userService.getAllUsers().subscribe({
-      next: (users) => (this.users = users),
-      error: (err) => console.log(err),
-    });
-
-    await this.teamService.getAllTeams().subscribe({
-      next: (teams) => (this.teams = teams),
-      error: (err) => console.log(err),
-    });
-
-    await this.userTeamService.getAllUserTeams().subscribe({
-      next: (userTeams) => (this.userTeams = userTeams),
-      error: (err) => console.log(err),
-    });
-
-    await this.myProfileService.getMyActiveTeamsAsync().then((ts) => this.myTeams = ts);
+    this.fines = await lastValueFrom(fines$);
+    this.users = await lastValueFrom(users$);
+    this.teams = await lastValueFrom(teams$);
+    this.userTeams = await lastValueFrom(userTeams$);
+    this.myTeams = await this.myProfileService.getMyActiveTeamsAsync();
+    
     this.loadFineList();
     this.rows = this.formateFineList();
   }

@@ -4,14 +4,14 @@
 <div class="container">
   <ngx-datatable class="material p-4" [rows]="rows" [headerHeight]="50" [rowHeight]="80" [footerHeight]="50"
     [scrollbarV]="false" [scrollbarH]="true">
-    <ngx-datatable-column [minWidth]="150" name="Name" prop="name"> </ngx-datatable-column>
-    <ngx-datatable-column [minWidth]="100" name="Team Name" prop="teamName">
+    <ngx-datatable-column [minWidth]="200" name="Name" prop="name"> </ngx-datatable-column>
+    <ngx-datatable-column [minWidth]="150" name="Team Name" prop="teamName">
     </ngx-datatable-column>
-    <ngx-datatable-column [minWidth]="150" name="Fine Type" prop="fineType">
+    <ngx-datatable-column [minWidth]="200" name="Fine Type" prop="fineType">
     </ngx-datatable-column>
     <ngx-datatable-column [minWidth]="100" name="Fine Amount" prop="fineAmount">
     </ngx-datatable-column>
-    <ngx-datatable-column name="Date" prop="date"> </ngx-datatable-column>
+    <ngx-datatable-column [minWidth]="200" name="Date" prop="date"> </ngx-datatable-column>
     <ngx-datatable-column [minWidth]="200" name="Note" prop="note"> </ngx-datatable-column>
 
     <ngx-datatable-column [minWidth]="200" name="Actions" prop="id">
