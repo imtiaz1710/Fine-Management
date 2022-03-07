@@ -12,4 +12,4 @@ C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Applic
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Application\obj\Debug\net6.0\FineManagement.Application.dll
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Application\obj\Debug\net6.0\FineManagement.Application.pdb
 C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Application\obj\Debug\net6.0\ref\FineManagement.Application.dll
-C:\Users\Imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Application\bin\Debug\net6.0\ref\FineManagement.Application.dll
+C:\Users\imtiaz\Desktop\Fine-Management\FineManagement.Api\FineManagement.Application\obj\Debug\net6.0\refint\FineManagement.Application.dll

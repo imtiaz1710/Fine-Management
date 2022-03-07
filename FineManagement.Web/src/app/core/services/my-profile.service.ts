@@ -10,6 +10,10 @@ import { UserTeamService } from './user-team.service';
   providedIn: 'root',
 })
 export class MyProfileService {
+  teams: Team[] = [];
+  userTeams: UserTeam[] = [];
+  myTeams: Team[] = [];
+
   constructor(
     private userTeamService: UserTeamService,
     private teamService: TeamService
@@ -20,44 +24,30 @@ export class MyProfileService {
   }
 
   public async getMyActiveTeamsAsync() {
-    let teams: Team[];
-    let userTeams: UserTeam[];
-    let myTeams: Team[];
-
     const myProfile = this.getProfile();
 
     await this.teamService.getAllTeams().subscribe({
-      next: (ts) => (teams = ts),
+      next: (ts) => {
+        this.teams = ts;
+        console.log(this.teams);
+      },
       error: (err) => console.log(err),
     });
 
     await this.userTeamService.getAllUserTeams().subscribe({
-      next: (uts) => (userTeams = uts),
+      next: (uts) => {
+        this.userTeams = uts;
+
+        this.userTeams
+          .filter((ut) => ut.isActive && ut.userId == myProfile.id)
+          .forEach((ut) => this.myTeams.push(this.teams.find((t) => t.id == ut.teamId)));
+      },
       error: (err) => console.log(err),
     });
 
-    userTeams
-      .filter((ut) => ut.isActive && ut.userId == myProfile.id)
-      .forEach((ut) => myTeams.push(teams.find((t) => t.id == ut.teamId)));
-
-    return  myTeams;
+     console.log(this.teams)
+     console.log(this.userTeams)
+     console.log('this is:', this.myTeams)
+    return this.myTeams;
   }
-
-  // private getActiveUserTeamByUserIdPromise(userId: number) {
-  //   return new Promise((resolve, reject) => {
-  //     this.userTeamService.getUserTeamByUserId(userId).subscribe({
-  //       next: (userTeams) => resolve(userTeams.filter((x) => x.isActive)),
-  //       error: (err) => reject(err),
-  //     });
-  //   });
-  // }
-
-  // private getTeamByIdPromise(teamId: number) {
-  //   return new Promise((resolve, reject) => {
-  //     this.teamService.getTeamById(teamId).subscribe({
-  //       next: (team) => resolve(team),
-  //       error: (err) => reject(err),
-  //     });
-  //   });
-  // }
 }

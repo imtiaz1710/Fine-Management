@@ -97,8 +97,8 @@ export class FineEntryComponent implements OnInit {
     };
 
     this.fineService.addFine(fine).subscribe({
-      next: () => this.toastrService.success('Successfully add fine!'),
-      error: (err) => this.toastrService.error('Error! Can not add fine!'),
+      next: (fine) => this.toastrService.success('Successfully add fine!'),
+      error: (err) => {this.toastrService.error('Failed to add fine!');console.log(err)},
       complete: () => this.router.navigate(['/main/fineList']),
     });
   }

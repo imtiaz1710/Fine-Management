@@ -20,12 +20,12 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class FineListComponent implements OnInit {
   modalRef: BsModalRef;
-  users: User[];
-  teams: Team[];
-  userTeams: UserTeam[];
-  myTeams: Team[];
-  fines: Fine[];
-  filteredFineList: Fine[];
+  users: User[] = [];
+  teams: Team[] = [];
+  userTeams: UserTeam[] = [];
+  myTeams: Team[] = [];
+  fines: Fine[] = [];
+  filteredFineList: Fine[] = [];
   rows = [];
   editFineForm: FormGroup;
   fineTypes = FineTypes;
@@ -39,14 +39,13 @@ export class FineListComponent implements OnInit {
     private myProfileService: MyProfileService,
     private fineService: FineService,
     private modalService: BsModalService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.loadAllDataForFineList();
   }
 
-  private async loadAllDataForFineList()
-  {
+  private async loadAllDataForFineList() {
     this.filteredFineList = [];
     await this.fineService.getAllFines().subscribe({
       next: (fines) => (this.fines = fines),
@@ -68,8 +67,7 @@ export class FineListComponent implements OnInit {
       error: (err) => console.log(err),
     });
 
-    this.myTeams = await this.myProfileService.getMyActiveTeamsAsync();
-    
+    await this.myProfileService.getMyActiveTeamsAsync().then((ts) => this.myTeams = ts);
     this.loadFineList();
     this.rows = this.formateFineList();
   }
@@ -92,7 +90,10 @@ export class FineListComponent implements OnInit {
   }
 
   private loadFineList() {
+    this.myTeams.forEach(x=> {var t = x.id})
+
     this.myTeams.forEach((myTeam) => {
+      console.log(myTeam)
       let userTeams = this.userTeams.filter((ut) => myTeam.id == ut.teamId);
 
       userTeams.forEach((ut) => {
@@ -103,7 +104,7 @@ export class FineListComponent implements OnInit {
   }
 
   edit(id: number) {
-    let fine = this.fines.find(f => f.id == id);
+    let fine = this.fines.find((f) => f.id == id);
 
     fine.fineType = this.editFineForm.value.fineType;
     fine.fineAmount = this.editFineForm.value.fineAmount;
@@ -111,25 +112,25 @@ export class FineListComponent implements OnInit {
     fine.date = this.editFineForm.value.date;
 
     this.fineService.updateFine(fine.id, fine).subscribe({
-      next: (res) => this.toastrService.success("Successfully updated!"),
-      error: (err) => this.toastrService.error("Error!"),
-      complete: () => this.loadAllDataForFineList()
+      next: (res) => this.toastrService.success('Successfully updated!'),
+      error: (err) => this.toastrService.error('Error!'),
+      complete: () => this.loadAllDataForFineList(),
     });
   }
 
   Delete(value) {
     this.fineService.deleteFine(value).subscribe({
-      next: (res) => this.toastrService.success("Successfully deleted!"),
-      error: (err) => this.toastrService.error("Error!"),
-      complete: () => this.loadAllDataForFineList()
+      next: (res) => this.toastrService.success('Successfully deleted!'),
+      error: (err) => this.toastrService.error('Error!'),
+      complete: () => this.loadAllDataForFineList(),
     });
   }
 
   openEditFineModal(template: TemplateRef<any>, fineId: number) {
-    let fine = this.fines.filter(f => f.id == fineId)[0];
-    let userTeam = this.userTeams.filter(ut => ut.id == fine.userTeamId)[0];
-    let user = this.users.filter(u => u.id == userTeam.userId)[0];
-    let team = this.teams.filter(t => t.id == userTeam.teamId)[0];
+    let fine = this.fines.filter((f) => f.id == fineId)[0];
+    let userTeam = this.userTeams.filter((ut) => ut.id == fine.userTeamId)[0];
+    let user = this.users.filter((u) => u.id == userTeam.userId)[0];
+    let team = this.teams.filter((t) => t.id == userTeam.teamId)[0];
 
     this.editFineForm = new FormBuilder().group({
       name: [{ value: user.name, disabled: true }],
@@ -138,8 +139,8 @@ export class FineListComponent implements OnInit {
       fineAmount: [{ value: fine.fineAmount, disabled: false }],
       date: [{ value: fine.date, disabled: false }],
       note: [{ value: fine.note, disabled: false }],
-      id: fine.id
-    })
+      id: fine.id,
+    });
 
     this.modalRef = this.modalService.show(template);
   }

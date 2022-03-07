@@ -9,12 +9,12 @@ import { Team } from '../models/team';
 export class TeamService {
   constructor(private http: HttpClient) {}
 
-  addTeam(feam: Team): Observable<Team> {
-    return this.http.post<Team>(`https://localhost:44341/api/Team`, feam);
+  addTeam(team: Team): Observable<Team> {
+    return this.http.post<Team>(`https://localhost:44341/api/Team`, team);
   }
 
-  updateTeam(id: number, feam: Team): Observable<Team> {
-    return this.http.put<Team>(`https://localhost:44341/api/Team/${id}`, feam);
+  updateTeam(id: number, team: Team): Observable<Team> {
+    return this.http.put<Team>(`https://localhost:44341/api/Team/${id}`, team);
   }
 
   getAllTeams(): Observable<Team[]> {
