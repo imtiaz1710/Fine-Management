@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AIvCXSO4+hfKO81vltV7zvBLIejMreOKRoshFD4DQ+WweNirSVJcb6vX6cQeYK+lFp8hon2N9WKqYEYVGB1e8Q==",
+  "dgSpecHash": "e+xslRhwH3rxd+hGRSScpnZ1qBqFqxWxyiiXU0AwywgMIp7sspfqvZ6wsI94iZW397cwLE8Zi7ZIx4yDWLXh7Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Api\\FineManagement.Api.csproj",
+  "projectFilePath": "E:\\kaz\\fineManagement\\FineManagement.Api\\FineManagement.Api\\FineManagement.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\imtiaz\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\imtiaz\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

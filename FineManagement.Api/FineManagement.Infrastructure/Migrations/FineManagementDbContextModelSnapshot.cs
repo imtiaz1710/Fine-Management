@@ -161,6 +161,9 @@ namespace FineManagement.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsRepresentativeOfTeam")
+                        .HasColumnType("bit");
+
                     b.Property<int>("LastUpdatedBy")
                         .HasColumnType("int");
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Rxi6VJdHD8k4LhJXBhSv+E/gJTY2nGVXTe4kcB3mH12EOIDL5oVHItwumfBCRN8RgaZy3luhsdYzHLckbumbaw==",
+  "dgSpecHash": "NCnNCHJV6oeLlG6a0ipSR9ws+hPoX36SzP6VTzz2fR7xMUnS0WW3fs0bZxwUhigrnnCH+ELdra9NSFR9Ye1uyg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Infrastructure\\FineManagement.Infrastructure.csproj",
+  "projectFilePath": "E:\\kaz\\fineManagement\\FineManagement.Api\\FineManagement.Infrastructure\\FineManagement.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\imtiaz\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

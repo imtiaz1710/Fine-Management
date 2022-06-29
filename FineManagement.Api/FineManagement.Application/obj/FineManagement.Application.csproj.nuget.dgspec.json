@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Application\\FineManagement.Application.csproj": {}
+    "E:\\kaz\\fineManagement\\FineManagement.Api\\FineManagement.Application\\FineManagement.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Application\\FineManagement.Application.csproj": {
+    "E:\\kaz\\fineManagement\\FineManagement.Api\\FineManagement.Application\\FineManagement.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Application\\FineManagement.Application.csproj",
+        "projectUniqueName": "E:\\kaz\\fineManagement\\FineManagement.Api\\FineManagement.Application\\FineManagement.Application.csproj",
         "projectName": "FineManagement.Application",
-        "projectPath": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Application\\FineManagement.Application.csproj",
+        "projectPath": "E:\\kaz\\fineManagement\\FineManagement.Api\\FineManagement.Application\\FineManagement.Application.csproj",
         "packagesPath": "C:\\Users\\imtiaz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Application\\obj\\",
+        "outputPath": "E:\\kaz\\fineManagement\\FineManagement.Api\\FineManagement.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -31,8 +31,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Core\\FineManagement.Core.csproj": {
-                "projectPath": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Core\\FineManagement.Core.csproj"
+              "E:\\kaz\\fineManagement\\FineManagement.Api\\FineManagement.Core\\FineManagement.Core.csproj": {
+                "projectPath": "E:\\kaz\\fineManagement\\FineManagement.Api\\FineManagement.Core\\FineManagement.Core.csproj"
               }
             }
           }
@@ -91,14 +91,14 @@
         }
       }
     },
-    "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Core\\FineManagement.Core.csproj": {
+    "E:\\kaz\\fineManagement\\FineManagement.Api\\FineManagement.Core\\FineManagement.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Core\\FineManagement.Core.csproj",
+        "projectUniqueName": "E:\\kaz\\fineManagement\\FineManagement.Api\\FineManagement.Core\\FineManagement.Core.csproj",
         "projectName": "FineManagement.Core",
-        "projectPath": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Core\\FineManagement.Core.csproj",
+        "projectPath": "E:\\kaz\\fineManagement\\FineManagement.Api\\FineManagement.Core\\FineManagement.Core.csproj",
         "packagesPath": "C:\\Users\\imtiaz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\imtiaz\\Desktop\\Fine-Management\\FineManagement.Api\\FineManagement.Core\\obj\\",
+        "outputPath": "E:\\kaz\\fineManagement\\FineManagement.Api\\FineManagement.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

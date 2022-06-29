@@ -9,6 +9,7 @@
         public string ConfirmPassword { get; set; }
         public string? Designation { get; set; }
         public string? Address { get; set; }
+        public bool IsRepresentativeOfTeam { get; set; } = false;
         public virtual ICollection<Team> Teams { get; set; }
     }
 }
