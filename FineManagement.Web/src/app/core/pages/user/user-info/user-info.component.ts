@@ -39,14 +39,19 @@ export class UserInfoComponent implements OnInit {
     
     this.user = this.users.find((u) => u.id == this.userId);
 
+    this.loadEditForm();
+
+    this.myTeams = await this.myProfileService.getMyActiveTeamsAsync();
+  }
+
+  loadEditForm()
+  {
     this.editForm = this.formBuilder.group({
       name: [this.user.name],
       phoneNo: [this.user.phoneNo],
       designation: [this.user.designation],
       address: [this.user.address],
     });
-
-    this.myTeams = await this.myProfileService.getMyActiveTeamsAsync();
   }
 
   onClick() {
@@ -64,5 +69,10 @@ export class UserInfoComponent implements OnInit {
         this.toasterService.success('Profile Info Successfully Updated!'),
       error: (err) => this.toasterService.error('Error!'),
     });
+  }
+
+  onCancelEdit()
+  {
+    this.loadEditForm();
   }
 }

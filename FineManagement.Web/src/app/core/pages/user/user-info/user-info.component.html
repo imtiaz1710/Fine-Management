@@ -29,8 +29,12 @@
               <label class="labels">Address</label><input formControlName="address" type="text" class="form-control" />
             </div>
           </div>
-          <div class="mt-5 text-center">
+          <div class="mt-5 d-flex justify-content-between">
             <button class="btn btn-primary profile-button" style="background-color: rgb(42, 193, 140)" type="button"
+              (click)="onClick();onCancelEdit()">
+              Cancel
+            </button>
+            <button class="btn btn-danger profile-button" style="background-color: rgb(42, 193, 140)" type="button"
               (click)="onClick(); onEdit()">
               Save Profile
             </button>
