@@ -71,7 +71,7 @@ export class FineEntryComponent implements OnInit {
     const selectedTeamId = this.fineEntryForm.value.teamId;
 
     const filteredUserTeams = this.userTeams.filter(
-      (ut) => ut.teamId == selectedTeamId
+      (ut) => ut.teamId == selectedTeamId && ut.isActive == true
     );
 
     this.usersOfmySelectedTeam = filteredUserTeams.map(
