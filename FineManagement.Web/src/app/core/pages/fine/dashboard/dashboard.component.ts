@@ -10,6 +10,7 @@ import { TransactionService } from 'src/app/core/services/transaction.service';
 import { UserTeamService } from 'src/app/core/services/user-team.service';
 import { UserService } from 'src/app/core/services/user.service';
 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -27,6 +28,8 @@ export class DashboardComponent implements OnInit {
   filteredFines: Fine[];
   filteredTransactions: Transaction[];
   filteredUser: User;
+  isForActiveUser: boolean;
+  dropDownOptionForUserType = [{title: "Active User", value: true},{title: "Inactive User", value: false}]
 
   constructor(
     private userService: UserService,

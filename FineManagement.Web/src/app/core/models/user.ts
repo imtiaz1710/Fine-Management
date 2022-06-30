@@ -7,4 +7,5 @@ export interface User {
     confirmPassword: string;
     designation : string;
     address: string;
+    isRepresentativeOfTeam: boolean;
 }

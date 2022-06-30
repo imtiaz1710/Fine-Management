@@ -56,6 +56,7 @@ export class LoginComponent implements OnInit {
 
       this.userService.getAllUsers().subscribe({
         next: (us) => {
+          debugger
           const user = us.find(
             (x) =>
               x.email === this.loginForm.value.email &&
