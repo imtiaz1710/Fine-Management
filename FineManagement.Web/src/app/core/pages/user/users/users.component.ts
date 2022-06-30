@@ -41,7 +41,7 @@ export class UsersComponent implements OnInit {
     private userTeamService: UserTeamService,
     private teamService: TeamService,
     private toastrService: ToastrService
-  ) {}
+  ) { }
 
   async ngOnInit() {
     this.addToTeamForm = this.formBuilder.group({
@@ -76,7 +76,7 @@ export class UsersComponent implements OnInit {
       let myUserTeamMates = this.userTeams.filter(
         (ut) => ut.teamId == myTeam.id && ut.isActive
       );
-      
+
       myUserTeamMates.forEach((userTeamMate) => {
         let user = this.users.filter((u) => u.id == userTeamMate.userId)[0];
         let team = this.teams.filter((t) => t.id == userTeamMate.teamId)[0];
@@ -92,13 +92,13 @@ export class UsersComponent implements OnInit {
 
     this.rows = this.rows.map(
       (row) =>
-        (row = {
-          name: row.name,
-          email: row.email,
-          phoneNo: row.phoneNo,
-          teamName: row.teamName,
-          userTeamId: row.userTeamId,
-        })
+      (row = {
+        name: row.name,
+        email: row.email,
+        phoneNo: row.phoneNo,
+        teamName: row.teamName,
+        userTeamId: row.userTeamId,
+      })
     );
   }
 
@@ -133,6 +133,14 @@ export class UsersComponent implements OnInit {
   }
 
   openAddUserModal(template: TemplateRef<any>) {
+    if(this.userTeams.find(ut => ut.userId === this.addToTeamForm.value.userId && 
+      ut.teamId === this.addToTeamForm.value.teamId && ut.isActive === true))
+    {
+      this.toastrService.error('Duplicate Entry');
+      this.addToTeamForm.reset();
+      return;
+    }
+
     if (this.addToTeamForm.valid)
       this.modalRef = this.modalService.show(template);
     else this.toastrService.error('invalid operation!');
