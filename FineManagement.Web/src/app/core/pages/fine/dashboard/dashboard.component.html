@@ -2,11 +2,11 @@
   {{ LoadUserTeamsByTeamId(team.id) }}
   <div class="card mt-3 p-5">
     <div class="card border-success mb-3">
-      <div class="card-header bg-transparent border-success d-flex">
+      <div class="card-header bg-transparent border-success d-flex justify-content-between">
         <h4>{{ team.name }}</h4>
         <div>
-        <!-- <ng-select [items]='dropDownOptionForUserType' bindLabel="title" bindValue="value" placeholder="Select User Type"[(ngModel)]="isForActiveUser">
-        </ng-select> -->
+        <ng-select [items]='dropDownOptionForUserType' bindLabel="title" bindValue="value" placeholder="Select User Type"[(ngModel)]="isForActiveUser">
+        </ng-select>
         </div>
       </div>
       <div class="card-body text-success container">

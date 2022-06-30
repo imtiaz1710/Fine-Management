@@ -8,6 +8,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FineListComponent } from './fine-list/fine-list.component';
 import { ReportComponent } from './report/report.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReportComponent } from './report/report.component';
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    NgSelectModule
   ]
 })
 export class FineModule { }

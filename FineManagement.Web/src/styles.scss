@@ -7,6 +7,7 @@
 /* Importing Datepicker SCSS file. */
 // @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
 @import "../node_modules/font-awesome/css/font-awesome.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
 
 .themeColor{
     background-color: rgb(42, 193, 140);

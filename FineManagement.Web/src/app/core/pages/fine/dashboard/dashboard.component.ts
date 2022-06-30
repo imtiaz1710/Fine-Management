@@ -28,8 +28,8 @@ export class DashboardComponent implements OnInit {
   filteredFines: Fine[];
   filteredTransactions: Transaction[];
   filteredUser: User;
-  isForActiveUser: boolean;
-  dropDownOptionForUserType = [{title: "Active User", value: true},{title: "Inactive User", value: false}]
+  isForActiveUser: boolean = true;
+  dropDownOptionForUserType = [{title: "Active User    ", value: true},{title: "Inactive User    ", value: false}]
 
   constructor(
     private userService: UserService,
@@ -66,7 +66,7 @@ export class DashboardComponent implements OnInit {
   }
 
   LoadUserTeamsByTeamId(teamId: number) {
-    this.filteredUserTeams = this.userTeams.filter((ut) => ut.teamId == teamId);
+    this.filteredUserTeams = this.userTeams.filter((ut) => ut.teamId == teamId && ut.isActive == this.isForActiveUser);
   }
 
   LoadUserByUserTeam(userTeam: UserTeam) {
@@ -99,7 +99,7 @@ export class DashboardComponent implements OnInit {
 
   calculateTotalamountByTeamId(teamId: number): number {
     const userTeamsOfMyTeam: UserTeam[] = this.userTeams.filter(
-      (ut) => ut.teamId == teamId
+      (ut) => ut.teamId == teamId && ut.isActive == this.isForActiveUser
     );
     let transactionsOfMyTeam: Transaction[] = [];
 
@@ -119,7 +119,7 @@ export class DashboardComponent implements OnInit {
 
   calculateTotalFineAmountByTeamId(teamId: number): number {
     const userTeamsOfMyTeam: UserTeam[] = this.userTeams.filter(
-      (ut) => ut.teamId == teamId
+      (ut) => ut.teamId == teamId && ut.isActive == this.isForActiveUser
     );
     let finesOfMyTeam: Fine[] = [];
 
