@@ -47,4 +47,4 @@ Thumbs.db
 .json
 .pdb
 .dll
-/.angular
+.angular/*
