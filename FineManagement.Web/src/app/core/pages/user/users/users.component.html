@@ -32,8 +32,8 @@
     <ngx-datatable-column [minWidth]="400" name="Email" prop="email"> </ngx-datatable-column>
     <ngx-datatable-column [minWidth]="300" name="Phone No" prop="phoneNo">
     </ngx-datatable-column>
-    <ngx-datatable-column [minWidth]="300" name="Team Name" prop="teamName"> </ngx-datatable-column>
-    <ngx-datatable-column [minWidth]="300" name="Action" prop="userTeamId">
+    <ngx-datatable-column [minWidth]="200" name="Team Name" prop="teamName"> </ngx-datatable-column>
+    <ngx-datatable-column [minWidth]="200" name="Action" prop="userTeamId">
       <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
         <button type="button" class="btn btn-outline-danger"
           (click)="openDeleteUserModal(DeleteUserModalTemplate, value)">
