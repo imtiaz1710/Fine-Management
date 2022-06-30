@@ -2,7 +2,7 @@
   <h4>Fine List</h4>
 </div>
 <div class="container">
-  <ngx-datatable class="material p-4" [rows]="rows" [headerHeight]="50" [rowHeight]="80" [footerHeight]="50"
+  <ngx-datatable [limit]="10" class="material p-4" [rows]="rows" [headerHeight]="50" [rowHeight]="80" [footerHeight]="50"
     [scrollbarV]="false" [scrollbarH]="true">
     <ngx-datatable-column [minWidth]="200" name="Name" prop="name"> </ngx-datatable-column>
     <ngx-datatable-column [minWidth]="150" name="Team Name" prop="teamName">
