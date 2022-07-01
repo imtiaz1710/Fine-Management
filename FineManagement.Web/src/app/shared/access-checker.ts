@@ -10,7 +10,6 @@ export class AccessChecker {
 
     async preventUnauthorizedAccess() {
         const user = localStorage.getItem('user');
-
         if (!user) {
             this.router.navigate(['/']);
         }
